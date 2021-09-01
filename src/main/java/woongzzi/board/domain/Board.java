@@ -1,5 +1,6 @@
 package woongzzi.board.domain;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,7 +10,7 @@ import java.sql.Timestamp;
 
 @Setter
 @Getter
-@NoArgsConstructor
+@NoArgsConstructor //기본 생성자를 생성해 주는 어노테이션
 @Entity
 public class Board {
 
@@ -29,4 +30,13 @@ public class Board {
     @Column(nullable = false)
     private Timestamp regDate;
 
+
+    @Builder
+    public Board(Long seq, String title, String content, String id, Timestamp regDate) {
+        this.seq = seq;
+        this.title = title;
+        this.content = content;
+        this.id = id;
+        this.regDate = regDate;
+    }
 }
