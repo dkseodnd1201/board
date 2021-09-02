@@ -5,5 +5,4 @@ import woongzzi.board.domain.Board;
 
 public interface BoardRepository extends JpaRepository<Board,Long>{
 
-
 }
