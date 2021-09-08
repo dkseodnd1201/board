@@ -18,16 +18,16 @@ public class BoardDTO {
     private String id;
     private LocalDateTime regDate;
 
-    public Board toEntity() {
-        Board build = Board.builder()
-                .seq(seq)
-                .title(title)
-                .content(content)
-                .id(id)
-                .regDate(regDate)
-                .build();
-        return build;
-    }
+//    public Board toEntity() {
+//        Board build = Board.builder()
+//                .seq(seq)
+//                .title(title)
+//                .content(content)
+//                .id(id)
+//                .regDate(regDate)
+//                .build();
+//        return build;
+//    }
 
     @Builder
     public BoardDTO(Long seq, String title, String content, String id, LocalDateTime regDate) {
