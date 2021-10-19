@@ -1,4 +1,4 @@
-package woongzzi.board.domain;
+package woongzzi.board.domain.entity;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -6,14 +6,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Setter
 @Getter
 @NoArgsConstructor
 @Entity
-public class Board {
+public class BoardEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //PK의 값을 자동으로
@@ -32,7 +31,7 @@ public class Board {
     private LocalDateTime regDate;
 
     @Builder
-    public Board(Long seq, String title, String content, String id, LocalDateTime regDate) {
+    public BoardEntity(Long seq, String title, String content, String id, LocalDateTime regDate) {
         this.seq = seq;
         this.title = title;
         this.content = content;

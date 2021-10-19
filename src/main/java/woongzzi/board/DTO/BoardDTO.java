@@ -1,9 +1,10 @@
-package woongzzi.board.domain;
+package woongzzi.board.DTO;
 
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import woongzzi.board.domain.entity.BoardEntity;
 
 import java.time.LocalDateTime;
 
@@ -18,8 +19,8 @@ public class BoardDTO {
     private String id;
     private LocalDateTime regDate;
 
-    public Board toEntity() {
-        return Board.builder()
+    public BoardEntity toEntity() {
+        return BoardEntity.builder()
                 .seq(seq)
                 .title(title)
                 .content(content)
