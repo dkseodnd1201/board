@@ -19,6 +19,7 @@ public abstract class TimeEntitiy {
     private LocalDateTime createdDate;
 
     @LastModifiedDate//Entity가 수정될떄 수정일을 주입하는 어노테이션
+    @Column
     private LocalDateTime modifiedDate;
 
 }

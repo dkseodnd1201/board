@@ -285,14 +285,34 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
+                                        <th>번호</th>
+                                        <th>제목</th>
+                                        <th>작성자</th>
+                                        <th>최초등록일자</th>
+                                        <th>최종수정일자</th>
                                     </tr>
                                     </thead>
+
+                                    <tbody>
+                                    <tr th:each="board : ${boardList}">
+                                        <td>
+                                            <span th:text="${board.seq}"></span>
+                                        </td>
+                                        <td>
+                                            <span th:text="${board.content}"></span>
+                                        </td>
+                                        <td>
+                                            <span th:text="${board.id}"></span>
+                                        </td>
+                                        <td>
+                                            <span th:text="${board.createdDate}"></span>
+                                        </td>
+                                        <td>
+                                            <span th:text="${board.modifiedDate}"></span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
                                 </table>
                             </div>
                         </div>

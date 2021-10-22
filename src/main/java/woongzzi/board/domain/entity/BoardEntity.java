@@ -6,15 +6,14 @@ import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Entity
-@Table(name ="board")
+@Entity(name ="board")
 public class BoardEntity extends TimeEntitiy {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int seq;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String title;
 
     @Column(nullable = true)
