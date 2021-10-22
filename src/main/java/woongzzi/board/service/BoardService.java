@@ -15,20 +15,20 @@ public class BoardService {
     private BoardRepository boardRepository;
 
     @Transactional
-    public List<BoardDTO> findMember(BoardDTO boardDTO) {
+    public List<BoardDTO> findMember() {
         List<BoardEntity> boardEntities = boardRepository.findAll();
         List<BoardDTO> boardDtoList = new ArrayList<>();
 
         for ( BoardEntity boardEntity : boardEntities) {
-            BoardDTO entity = BoardDTO.builder()
+            BoardDTO boardDTO1 = BoardDTO.builder()
                     .id(boardEntity.getId())
                     .title(boardEntity.getTitle())
                     .content(boardEntity.getContent())
                     .id(boardEntity.getId())
-                    .regDate(boardEntity.getRegDate())
-                    .upDate(boardEntity.getUpDate())
+                    .createdDate(boardEntity.getCreatedDate())
+                    .modifiedDate(boardEntity.getModifiedDate())
                     .build();
-            boardDtoList.add(entity);
+            boardDtoList.add(boardDTO1);
         }
         return boardDtoList;
     }

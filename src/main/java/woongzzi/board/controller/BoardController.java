@@ -2,21 +2,28 @@ package woongzzi.board.controller;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import woongzzi.board.DTO.BoardDTO;
+import woongzzi.board.service.BoardService;
+
+import java.util.List;
 
 
 @Controller
 @AllArgsConstructor
 public class BoardController {
-
+    private BoardService boardService;
     @GetMapping("/list")
     public String main() {
         return "/board/list";
     }
 
-    @GetMapping ("/")
-    public String test(){
+    @GetMapping ("/test")
+    public String test(Model model){
+        List<BoardDTO> boardList = boardService.findMember();
+
+        model.addAttribute("boardList", boardList);
         return "test";
     }
 

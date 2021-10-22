@@ -12,8 +12,7 @@ class BoardServiceTest {
 
     @Test
     void findAll() {
-        List<BoardDTO> boardDTO = boardService.findMember(BoardDTO.builder().build());
-        System.out.print("리스트 값 : "+boardDTO);
+        List<BoardDTO> boardDTO = boardService.findMember();
     }
 
 
