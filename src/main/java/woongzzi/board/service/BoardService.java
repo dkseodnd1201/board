@@ -15,7 +15,7 @@ public class BoardService {
     private BoardRepository boardRepository;
 
     @Transactional
-    public List<BoardDTO> findMember() {
+    public List<BoardDTO> getBoardlist() {
         List<BoardEntity> boardEntities = boardRepository.findAll();
         List<BoardDTO> boardDtoList = new ArrayList<>();
 
@@ -32,4 +32,12 @@ public class BoardService {
         }
         return boardDtoList;
     }
+
+    @Transactional
+    public void save(BoardDTO boardDTO) {
+        boardRepository.save(boardDTO.toEntity());
+    }
+
+
+
 }
