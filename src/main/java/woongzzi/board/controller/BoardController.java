@@ -3,10 +3,7 @@ package woongzzi.board.controller;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import woongzzi.board.DTO.BoardDTO;
 import woongzzi.board.service.BoardService;
 
@@ -14,7 +11,7 @@ import java.util.List;
 
 @Controller
 @AllArgsConstructor
-@RequestMapping("/board")
+@RequestMapping(value = "/board")
 public class BoardController {
     private BoardService boardService;
 
@@ -32,7 +29,7 @@ public class BoardController {
 
     @PostMapping("/input")
     public String save(BoardDTO boardDTO) {
-        boardService.save(boardDTO);
+        boardService.savePost(boardDTO);
         return "redirect:/board/list";
     }
 
@@ -43,4 +40,21 @@ public class BoardController {
         return "/board/detail";
     }
 
+    @GetMapping("/detail/edit/{seq}")
+    public String edit(@PathVariable("seq") long seq, Model model) {
+        BoardDTO boardEntity = boardService.getPost(seq);
+        model.addAttribute("boardEntity", boardEntity);
+        return "/board/update";
+    }
+
+    @PostMapping("/detail/edit/{seq}")
+    public String update(BoardDTO boardEntity) {
+        boardService.savePost(boardEntity);
+        return "redirect:/board/list";
+    }
+
+    @DeleteMapping("/detail/{seq}")
+    public void delete(@PathVariable("seq") long seq) {
+        boardService.deletePost(seq);
+    }
 }

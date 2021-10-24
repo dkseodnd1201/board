@@ -67,8 +67,9 @@
                                             <span th:text="${board.seq}"></span>
                                         </td>
                                         <td>
-                                            <a th:href="@{'/detail/' + ${board.seq}}"></a>
-                                            <span th:text="${board.content}"></span>
+                                            <a th:href="@{'/board/detail/' + ${board.seq}}">
+                                                <span th:text="${board.content}"></span>
+                                            </a>
                                         </td>
                                         <td>
                                             <span th:text="${board.id}"></span>
