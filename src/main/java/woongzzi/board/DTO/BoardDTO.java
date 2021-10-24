@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class BoardDTO {
 
-    private int seq;
+    private long seq;
     private String title;
     private String content;
     private String id;
@@ -28,7 +28,7 @@ public class BoardDTO {
     }
 
     @Builder
-    public BoardDTO(int seq, String title, String content, String id, LocalDateTime createdDate, LocalDateTime modifiedDate) {
+    public BoardDTO(long seq, String title, String content, String id, LocalDateTime createdDate, LocalDateTime modifiedDate) {
         this.seq = seq;
         this.title = title;
         this.content = content;

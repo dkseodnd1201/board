@@ -8,11 +8,12 @@ import woongzzi.board.domain.repository.BoardRepository;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @AllArgsConstructor
 @Service
 public class BoardService {
-    private BoardRepository boardRepository;
+    final private BoardRepository boardRepository;
 
     @Transactional
     public List<BoardDTO> getBoardlist() {
@@ -21,7 +22,7 @@ public class BoardService {
 
         for ( BoardEntity boardEntity : boardEntities) {
             BoardDTO boardDTO1 = BoardDTO.builder()
-                    .id(boardEntity.getId())
+                    .seq(boardEntity.getSeq())
                     .title(boardEntity.getTitle())
                     .content(boardEntity.getContent())
                     .id(boardEntity.getId())
@@ -38,6 +39,18 @@ public class BoardService {
         boardRepository.save(boardDTO.toEntity());
     }
 
-
-
+    @Transactional
+    public BoardDTO getPost(long seq) {
+        Optional<BoardEntity> boardEntities = boardRepository.findById(seq);
+        BoardEntity boardEntity = boardEntities.get();
+        BoardDTO boardDTO = BoardDTO.builder()
+                .seq(boardEntity.getSeq())
+                .title(boardEntity.getTitle())
+                .content(boardEntity.getContent())
+                .id(boardEntity.getId())
+                .createdDate(boardEntity.getCreatedDate())
+                .modifiedDate(boardEntity.getModifiedDate())
+                .build();
+        return boardDTO;
+    }
 }

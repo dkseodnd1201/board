@@ -11,7 +11,7 @@ public class BoardEntity extends TimeEntitiy {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int seq;
+    private long seq;
 
     @Column(nullable = true)
     private String title;
@@ -23,7 +23,7 @@ public class BoardEntity extends TimeEntitiy {
     private String id;
 
     @Builder
-    public BoardEntity(int seq, String title, String content, String id) {
+    public BoardEntity(long seq, String title, String content, String id) {
         this.seq = seq;
         this.title = title;
         this.content = content;

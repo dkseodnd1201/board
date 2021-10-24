@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Board</title>
+    <title>Board-list</title>
 
     <!-- Custom fonts for this template-->
     <link th:href="@{/bootstrap/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css" />
@@ -67,6 +67,7 @@
                                             <span th:text="${board.seq}"></span>
                                         </td>
                                         <td>
+                                            <a th:href="@{'/detail/' + ${board.seq}}"></a>
                                             <span th:text="${board.content}"></span>
                                         </td>
                                         <td>
