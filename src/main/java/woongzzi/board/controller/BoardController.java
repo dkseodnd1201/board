@@ -47,14 +47,15 @@ public class BoardController {
         return "/board/update";
     }
 
-    @PostMapping("/detail/edit/{seq}")
+    @PutMapping("/detail/edit/{seq}")
     public String update(BoardDTO boardEntity) {
         boardService.savePost(boardEntity);
         return "redirect:/board/list";
     }
 
     @DeleteMapping("/detail/{seq}")
-    public void delete(@PathVariable("seq") long seq) {
+    public String delete(@PathVariable("seq") long seq) {
         boardService.deletePost(seq);
+        return "redirect:/board/list";
     }
 }
