@@ -13,7 +13,7 @@ import java.util.Optional;
 @AllArgsConstructor
 @Service
 public class BoardService {
-    final private BoardRepository boardRepository;
+    private BoardRepository boardRepository;
 
     @Transactional
     public List<BoardDTO> getBoardlist() {

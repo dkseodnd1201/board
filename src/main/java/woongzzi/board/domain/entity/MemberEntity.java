@@ -28,21 +28,13 @@ public class MemberEntity {
     @Column(nullable = false)
     private String address;
 
-    @Column(nullable = false)
-    private String tel;
-
-    @Column(nullable = false)
-    private String sex;
-
     @Builder
-    public MemberEntity(long no, String id, String password, String name, String address, String tel, String sex) {
+    public MemberEntity(long no, String id, String password, String name, String address) {
         this.no = no;
         this.id = id;
         this.password = password;
         this.name = name;
         this.address = address;
-        this.tel = tel;
-        this.sex = sex;
     }
 }
 

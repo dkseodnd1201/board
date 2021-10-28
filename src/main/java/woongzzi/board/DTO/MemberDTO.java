@@ -13,8 +13,6 @@ public class MemberDTO {
     private String password;
     private String name;
     private String address;
-    private String tel;
-    private String sex;
 
     public MemberEntity toEntity() {
         return MemberEntity.builder()
@@ -23,19 +21,15 @@ public class MemberDTO {
                 .password(password)
                 .name(name)
                 .address(address)
-                .tel(tel)
-                .sex(sex)
                 .build();
     }
 
     @Builder
-    public MemberDTO(long no, String id, String password, String name, String address, String tel, String sex) {
+    public MemberDTO(long no, String id, String password, String name, String address) {
         this.no = no;
         this.id = id;
         this.password = password;
         this.name = name;
         this.address = address;
-        this.tel = tel;
-        this.sex = sex;
     }
 }
