@@ -39,12 +39,16 @@
                             <form class="user" th:action="@{/register}" method="post">
                                 <div class="form-group row">
                                     <div class="col-sm-5 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="name"
-                                               name="name" placeholder="name" autofocus>
+                                        <label for="name">
+                                            <input type="text" class="form-control form-control-user" id="name"
+                                                   name="name" placeholder="name" autofocus>
+                                        </label>
                                     </div>
                                     <div class="col-sm-5">
-                                        <input type="text" class="form-control form-control-user" id="id"
-                                            name="id" placeholder="id">
+                                        <label for="id">
+                                            <input type="text" class="form-control form-control-user" id="id"
+                                                   name="id" placeholder="id">
+                                        </label>
                                     </div>
 <!--                                    <div class="col-sm-2">-->
 <!--                                        <button>check</button>-->
@@ -52,17 +56,23 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="address"
-                                           name="address" placeholder="Email Address">
+                                    <label for="address">
+                                        <input type="email" class="form-control form-control-user" id="address"
+                                                                        name="address" placeholder="Email Address">
+                                    </label>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="password" placeholder="Password">
+                                        <label for="password">
+                                            <input type="password" class="form-control form-control-user"
+                                                   id="password" placeholder="Password">
+                                        </label>
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"
-                                               name="password" id="password2" placeholder="Repeat Password" oninput="samePassword()">
+                                        <label for="password2">
+                                            <input type="password" class="form-control form-control-user"
+                                                   name="password" id="password2" placeholder="Repeat Password" oninput="samePassword()">
+                                        </label>
                                     </div>
                                 </div>
                                 <button type="submit" id="registerBtn" class="btn btn-primary btn-user btn-block" disabled>
@@ -109,14 +119,13 @@
 
             const pw1 = document.getElementById('password').value;
             const pw2 = document.getElementById('password2').value;
-            if( pw1 != pw2 ) {
+            if( pw1 == pw2 ) {
 
-                return document.getElementById('registerBtn').disabled = true;
+                return document.getElementById('registerBtn').disabled = false;
 
 
             } else{
-
-                return document.getElementById('registerBtn').disabled = false;
+                return document.getElementById('registerBtn').disabled = true;
             }
         }
     </script>
