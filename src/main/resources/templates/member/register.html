@@ -40,20 +40,20 @@
                                 <div class="form-group row">
                                     <div class="col-sm-5 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="name"
-                       증                     placeholder="name" autofocus>
+                                               name="name" placeholder="name" autofocus>
                                     </div>
                                     <div class="col-sm-5">
                                         <input type="text" class="form-control form-control-user" id="id"
-                                            placeholder="id">
+                                            name="id" placeholder="id">
                                     </div>
-                                    <div class="col-sm-2">
-                                        <button>check</button>
-                                    </div>
+<!--                                    <div class="col-sm-2">-->
+<!--                                        <button>check</button>-->
+<!--                                    </div>-->
 
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-user" id="address"
-                                        placeholder="Email Address">
+                                           name="address" placeholder="Email Address">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
@@ -62,11 +62,11 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user"
-                                            id="password2" placeholder="Repeat Password" oninput="samePassword()">
+                                               name="password" id="password2" placeholder="Repeat Password" oninput="samePassword()">
                                     </div>
                                 </div>
-                                <button type="submit" id="registerBtn" class="btn btn-primary btn-user btn-block" disabled
-                                    >Register</button>
+                                <button type="submit" id="registerBtn" class="btn btn-primary btn-user btn-block" disabled>
+                                    Register</button>
 <!--                                <a th:href="@{login.html}" class="btn btn-primary btn-user btn-block">-->
 <!--                                    Register Account-->
 <!--                                </a>-->
@@ -95,14 +95,14 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/bootstrap/vendor/jquery/jquery.min.js"></script>
+    <script src="/bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/bootstrap/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="/bootstrap/js/sb-admin-2.min.js"></script>
 
     <script type="text/javascript">
         function samePassword() {

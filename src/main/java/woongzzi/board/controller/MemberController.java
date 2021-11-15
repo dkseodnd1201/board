@@ -28,7 +28,7 @@ public class MemberController {
     @PostMapping("/register")
     public String registerPost(MemberDTO memberDTO) {
         memberService.joinUser(memberDTO);
-        return "redirect:/member/login";
+        return "redirect:/board/list";
     }
 
     //비밀번호 분실 페이지

@@ -28,6 +28,7 @@ public class MemberService implements UserDetailsService {
     public Long joinUser(MemberDTO memberDTO) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         //패스워드 암호화
+        System.out.println(memberDTO);
         memberDTO.setPassword(passwordEncoder.encode(memberDTO.getPassword()));
         return memberRepository.save(memberDTO.toEntity()).getNo();
     }
