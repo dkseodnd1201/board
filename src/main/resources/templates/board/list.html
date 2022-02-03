@@ -68,7 +68,7 @@
                                         </td>
                                         <td>
                                             <a th:href="@{'/board/detail/' + ${board.seq}}">
-                                                <span th:text="${board.content}"></span>
+                                                <span th:text="${board.title}"></span>
                                             </a>
                                         </td>
                                         <td>
@@ -85,6 +85,7 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <button onclick="location.href='/board/input'">글쓰기</button>
                         </div>
                     </div>
 
