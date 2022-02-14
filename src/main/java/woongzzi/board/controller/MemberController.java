@@ -23,6 +23,7 @@ public class MemberController {
         return "/member/register";
     }
 
+    //회원가입 처리
     @PostMapping("/register")
     public String registerPost(MemberDTO memberDTO) {
         memberService.joinUser(memberDTO);

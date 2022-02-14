@@ -30,8 +30,11 @@ public class MemberService implements UserDetailsService {
         //패스워드 암호화
         System.out.println(memberDTO);
         memberDTO.setPassword(passwordEncoder.encode(memberDTO.getPassword()));
+
         return memberRepository.save(memberDTO.toEntity()).getNo();
     }
+
+
 
     @Override
     public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {

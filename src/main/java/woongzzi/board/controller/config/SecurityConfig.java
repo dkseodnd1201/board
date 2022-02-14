@@ -44,18 +44,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter { //WebSecurity
                 .and() // 로그인 설정
                 .formLogin()
                 .loginPage("/member/login")
+                .loginProcessingUrl("/member/login")
                 .defaultSuccessUrl("/board/list")
                 .usernameParameter("id")
                 .passwordParameter("password")
                 .permitAll()
                 .and() // 로그아웃 설정
                 .logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
-                .logoutSuccessUrl("/user/logout/result")
+                .logoutRequestMatcher(new AntPathRequestMatcher("/member/logout"))
+                .logoutSuccessUrl("/member/logout/result")
                 .invalidateHttpSession(true)
                 .and()
                 // 403 예외처리 핸들링
-                .exceptionHandling().accessDeniedPage("/user/denied");
+                .exceptionHandling().accessDeniedPage("/member/denied");
     }
 
     @Override

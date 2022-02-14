@@ -45,12 +45,12 @@
                                         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
-                                                id="id" aria-describedby="emailHelp"
+                                                id="id" name="id" aria-describedby="emailHelp"
                                                 placeholder="Enter ID...">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="password" placeholder="Password">
+                                                id="password" name="password" placeholder="Password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -71,10 +71,10 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" th:href="@{/forgot-password}">Forgot Password?</a>
+                                        <a class="small" th:href="@{'/member/forgot-password'}">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" th:href="@{/register}">Create an Account!</a>
+                                        <a class="small" th:href="@{'/member/register'}">Create an Account!</a>
                                     </div>
                                 </div>
                             </div>
