@@ -52,8 +52,8 @@ public class BoardControllerTest {
     @Test
     public void listTest() throws Exception{
         //given
-//        BoardDTO testData = new BoardDTO(1L,"test1","test1","test1", LocalDateTime.now(),LocalDateTime.now());
-//        List<BoardDTO> boardList2 = boardService.getBoardlist();
+        BoardDTO testData = new BoardDTO(1L,"test1","test1","test1", LocalDateTime.now(),LocalDateTime.now());
+        List<BoardDTO> boardList2 = boardService.getBoardlist();
         //when
 
         //then
