@@ -19,7 +19,7 @@ public class BoardController {
     public String list(Model model) {
         List<BoardDTO> boardList = boardService.getBoardlist();
         model.addAttribute("boardList", boardList);
-        return "/board/list";
+        return "/board/post";
     }
 
     @GetMapping("/input")
